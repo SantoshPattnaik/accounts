@@ -1,0 +1,32 @@
+#site-title {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+
+td,
+th,
+tr {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+  height: 20px;
+}
+
+table {
+  width: 100%;
+}
+
+#submit-button {
+  font-weight: bolder;
+}
+
+#button-container {
+  height: 200px;
+  position: relative;
+}
+
+#center {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+}
