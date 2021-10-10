@@ -1,7 +1,3 @@
-if (window.history.replaceState) {
-    window.history.replaceState(null, null, window.location.href);
-}
-
 function validate() {
     let n1 = document.forms["mainForm"]["date"].value
     let n2 = document.forms["mainForm"]["acname"].value
