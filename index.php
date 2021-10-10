@@ -1,3 +1,4 @@
+<?php require_once './constants.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,79 +13,35 @@
 <body>
     <h1 id="site-title">ACCOUNTS MANAGEMENT</h1>
 
-    <form name="mainForm" method="get" onsubmit="getValue()">
-        <table aria-label="main-table">
-            <tr>
-                <th id="date">Date</th>
-                <th id="account_name">Account</br> Name</th>
-                <th id="trans_id">Transaction <br>ID</th>
-                <th id="amount">Amount</th>
-                <th id="balance">Balance</th>
-            </tr>
-            <?php require_once './data_fetch.php' ?>
-            <tr>
-                <td>
-                    <?php echo $date ?>
-                </td>
-                <td>
-                    <?php echo $acname ?>
-                </td>
-                <td>
-                    <?php echo $trans_id ?>
-                </td>
-                <td>
-                    <?php echo $amount ?>
-                </td>
-                <td>
-                    <?php echo $balance ?>
-                </td>
-            </tr>
-
-            <?php
-            if ($sl_no == $db_sl_no) {
-                for ($i = 0; $i < $sl_no; $i++) {
-                    echo
-                    "<tr>
-                        <td>
-                            $date
-                        </td>
-                        <td>
-                            $acname
-                        </td>
-                        <td>
-                            $trans_id
-                        </td>
-                        <td>
-                            $amount
-                        </td>
-                        <td>
-                            $balance
-                        </td>   
-                    </tr>";
-                }
-            }
-
-            $db_sl_no++;
-            ?>
-        </table>
-        </br>
-        </br>
+    <table aria-label="main-table">
+        <tr>
+            <th id="date">Date</th>
+            <th id="account_name">Account</br> Name</th>
+            <th id="trans_id">Transaction <br>ID</th>
+            <th id="amount">Amount</th>
+            <th id="balance">Balance</th>
+        </tr>
+        <?php require_once DIR . '/data_fetch.php' ?>
+    </table>
+    </br>
+    </br>
+    <form name="mainForm" method="POST" action="./index.php" onsubmit="return validate()">
         <table aria-label="input-table">
             <tr>
                 <td>
-                    <input type="text">
+                    <input type="text" name="date">
                 </td>
                 <td>
-                    <input type="text">
+                    <input type="text" name="acname">
                 </td>
                 <td>
-                    <input type="text">
+                    <input type="text" name="trans_id">
                 </td>
                 <td>
-                    <input type="text">
+                    <input type="text" name="amount">
                 </td>
                 <td>
-                    <input type="text">
+                    <input type="text" name="balance">
                 </td>
             </tr>
         </table>
@@ -94,6 +51,7 @@
             </div>
         </div>
     </form>
+    <?php require_once DIR . '/db_insert.php' ?>
     <script src="script.js"></script>
 </body>
 

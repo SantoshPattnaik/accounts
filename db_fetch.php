@@ -3,36 +3,22 @@
 /**
  * @package Accounts
  */
-require_once __DIR__ . '/constants.php';
-require_once DIR . '/db_manage.php';
-// $query = "SELECT id FROM Accounts";
-// $result = $conn->query($query);
-// $number_of_rows = 0;
-// while ($row = $result->fetch_assoc()) {
-//     ++$number_of_rows;
-// }
+require_once './constants.php';
 
-$query = "SELECT * FROM Accounts";
-$result = $conn->query($query);
-while ($row = $result->fetch_assoc()) {
-    $id = $row['id'];
-    $date = $row['Date'];
-?>
-<tr>
-    <td><?php echo $date ?></td>
-    <?php $acname = $row['Account_Name']; ?>
-    <td><?php echo $acname ?></td>
-    <?php $acnum = $row['Account_Number']; ?>
-    <td><?php echo $acnum ?></td>
-    <?php $ifsc = $row['IFSC']; ?>
-    <td><?php echo $ifsc ?></td>
-    <?php $debited = $row['Debited']; ?>
-    <td><?php echo $debited ?></td>
-    <?php $credited = $row['Credited']; ?>
-    <td><?php echo $credited ?></td>
-    <?php $balance = $row['Balance']; ?>
-    <td><?php echo $balance ?></td>
-</tr>
-<?php }
-$conn->close();
-?>
+$mysqli = new mysqli(HOST, UNAME, PASS);
+
+
+$mysqli->query("CREATE DATABASE IF NOT EXISTS accounts");
+
+$mysqli->query("USE accounts");
+
+$mysqli->query('CREATE TABLE IF NOT EXISTS santosh_pattnaik(
+    Sl_No INT NOT NULL,
+    Date INT NOT NULL,
+    Acname VARCHAR(26) PRIMARY KEY,
+    Trans_ID varchar(30) NOT NULL,
+    Amount INT NOT NULL,
+    Balance INT NOT NULL
+)');
+
+$result = $mysqli->query('SELECT * FROM santosh_pattnaik');

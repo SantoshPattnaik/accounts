@@ -1,5 +1,13 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "AlternateGotNo1d";
+  src: url("AlternateGotNo1D.ttf");
+}
+
 #site-title {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "AlternateGotNo1D";
+  font-size: 60px;
   text-align: center;
 }
 
@@ -21,7 +29,6 @@ table {
 }
 
 #button-container {
-  height: 200px;
   position: relative;
 }
 
