@@ -41,20 +41,21 @@ while ($row = $result->fetch_assoc()) {
 
     echo
     "<tr>
-                        <td>
-                            $date
-                        </td>
-                        <td>
-                            $acname
-                        </td>
-                        <td>
-                            $trans_id
-                        </td>
-                        <td>
-                            $amount
-                        </td>
-                        <td>
-                            $balance
-                        </td>   
-                    </tr>";
+            <td>
+                $date
+            </td>
+                        
+            <td>
+                $acname
+            </td>
+            <td>
+                $trans_id
+            </td>
+            <td>
+                $amount
+            </td>
+            <td>
+                $balance
+            </td>   
+        </tr>";
 }
