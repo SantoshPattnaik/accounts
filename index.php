@@ -29,7 +29,7 @@
         <table aria-label="input-table">
             <tr>
                 <td>
-                    <input type="text" name="date">
+                    <input type="date" name="date">
                 </td>
                 <td>
                     <input type="text" name="acname">
