@@ -53,7 +53,6 @@
     </form>
     <?php require_once DIR . '/db_insert.php' ?>
     <script src="script.js"></script>
-    hi hello
 </body>
 
 </html>
