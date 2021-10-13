@@ -14,21 +14,37 @@ while ($row = $result->fetch_assoc()) {
     $month = $date[5] . $date[6];
     $year = $date[0] . $date[1] . $date[2] . $date[3];
 
-    $dateFiltered = $dt . '/' . $month . '/' . $year;
+    $monthName = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+
+    $dateFiltered = $dt . ' - ' . $monthName[$month - 1] . ' - ' . $year;
 
     /**
      * Variable to fetch account holder name
      * 
      * @var string $acname
      */
-    $acname = $row['Acname'];
+    $acname = $row['Account_Holder_Name'];
+
+    /**
+     * Variable to fetch bank name
+     * 
+     * @var string $bankFetch
+     */
+    $bankFetch = $row['Bank_Name'];
+
+    /**
+     * Variable to fetch payment method
+     * 
+     * @var string $payMethodFetch
+     */
+    $payMethodFetch = $row['Payment_Method'];
 
     /**
      * Variable to fetch transaction ID
      * 
      * @var string $trans_id
      */
-    $trans_id = $row['Trans_ID'];
+    $trans_id = $row['Transaction_ID'];
 
     /**
      * Variable to fetch amount of transaction
@@ -48,19 +64,24 @@ while ($row = $result->fetch_assoc()) {
     "<tr>
             <td>
                 $dateFiltered
-            </td>
-                        
+            </td>            
             <td>
                 $acname
+            </td>
+            <td>
+                $bankFetch
+            </td>
+            <td>
+                $payMethodFetch
             </td>
             <td>
                 $trans_id
             </td>
             <td>
-                $amount
+                Rs. $amount
             </td>
             <td>
-                $balance
+                Rs. $balance
             </td>   
         </tr>";
 }

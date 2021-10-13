@@ -37,3 +37,7 @@ table {
   position: absolute;
   left: 50%;
 }
+
+#pageUpdate {
+  text-decoration: none;
+}

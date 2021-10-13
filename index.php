@@ -15,17 +15,19 @@
 
     <table aria-label="main-table">
         <tr>
-            <th id="date">Date</th>
-            <th id="account_name">Account</br> Name</th>
-            <th id="trans_id">Transaction <br>ID</th>
+            <th id="date">Date of<br>Transaction</th>
+            <th id="account_name">Account<br>Holder Name</th>
+            <th id="bank_name">Bank Name</th>
+            <th id="payment_method">Payment Method</th>
+            <th id="trans_id">Transaction<br>ID</th>
             <th id="amount">Amount</th>
             <th id="balance">Balance</th>
         </tr>
         <?php require_once DIR . '/data_fetch.php' ?>
     </table>
-    </br>
-    </br>
-    <form name="mainForm" method="POST" action="./index.php" onsubmit="return validate()">
+    <br>
+    <br>
+    <form name="mainForm" method="POST" action="./" onsubmit="return validate()">
         <table aria-label="input-table">
             <tr>
                 <td>
@@ -33,6 +35,12 @@
                 </td>
                 <td>
                     <input type="text" name="acname">
+                </td>
+                <td>
+                    <input type="text" name="bank">
+                </td>
+                <td>
+                    <input type="text" name="pay_method">
                 </td>
                 <td>
                     <input type="text" name="trans_id">
@@ -52,6 +60,9 @@
         </div>
     </form>
     <?php require_once DIR . '/db_insert.php' ?>
+
+    <a id="pageUpdate" href="./" target="_blank">See the changes</a>
+
     <script src="script.js"></script>
 </body>
 
