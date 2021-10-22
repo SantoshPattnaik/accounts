@@ -24,7 +24,7 @@ if (($mysqli->query('CREATE TABLE IF NOT EXISTS santosh_pattnaik(
     Amount INT NOT NULL,
     Balance INT NOT NULL
 )')) === false) {
-    echo "Could not create table in database" . $mysqli->error;
+    echo "Could not create table in database " . $mysqli->error;
 }
 
 $result = $mysqli->query('SELECT * FROM santosh_pattnaik ORDER BY Sl_No DESC');
