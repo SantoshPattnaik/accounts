@@ -12,4 +12,9 @@ function validate() {
         alert("Please enter value inside the input boxes to proceed")
         return false;
     }
+    newtab();
+}
+
+function newtab() {
+    window.open('./', '_blank');
 }

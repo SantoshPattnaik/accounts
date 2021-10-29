@@ -62,26 +62,26 @@ while ($row = $result->fetch_assoc()) {
 
     echo
     "<tr>
-            <td>
-                $dateFiltered
-            </td>            
-            <td>
-                $acname
-            </td>
-            <td>
-                $bankFetch
-            </td>
-            <td>
-                $payMethodFetch
-            </td>
-            <td>
-                $trans_id
-            </td>
-            <td>
-                Rs. $amount
-            </td>
-            <td>
-                Rs. $balance
-            </td>   
-        </tr>";
+        <td>
+            $dateFiltered
+        </td>            
+        <td>
+            $acname
+        </td>
+        <td>
+            $bankFetch
+        </td>
+        <td>
+            $payMethodFetch
+        </td>
+        <td>
+            $trans_id
+        </td>
+        <td>
+            Rs. $amount
+        </td>
+        <td>
+            Rs. $balance
+        </td>   
+    </tr>";
 }
