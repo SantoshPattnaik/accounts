@@ -38,18 +38,16 @@ tr {
   left: 50%;
 } */
 
-table > tbody > td {
+/* for input area matching with the table padding */
+/* .table {
+  margin-bottom: 2rem;
+}
+
+table td {
   position: relative;
 }
-table > tbody > td > input {
+table td input {
   position: absolute;
-  display: block;
   top: 0;
   left: 0;
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  border: none;
-  padding: 10px;
-  box-sizing: border-box;
-}
+} */
