@@ -38,10 +38,28 @@
                                 <input class="form-control" type="text" name="acname">
                             </td>
                             <td>
-                                <input class="form-control" type="text" name="bank">
+                                <select class="form-control" type="text" name="bank">
+                                    <option>State Bank Of India</option>
+                                    <option>Union Bank Of India</option>
+                                    <option>Canara Bank</option>
+                                    <option>Federal Bank Of India</option>
+                                    <option>Punjab National Bank</option>
+                                    <option>Yes Bank</option>
+                                    <option>Axis Bank</option>
+                                    <option>HDFC Bank</option>
+                                    <option>ICICI Bank</option>
+                                </select>
                             </td>
                             <td>
-                                <input class="form-control" type="text" name="pay_method">
+                                <select class="form-control" type="text" name="pay_method">
+                                    <option>UPI</option>
+                                    <option>Transfer</option>
+                                    <option>Cheque</option>
+                                    <option>Credit Card</option>
+                                    <option>Debit Card</option>
+                                    <option>Netbanking</option>
+                                    <option>RTGS</option>
+                                </select>
                             </td>
                             <td>
                                 <input class="form-control" type="text" name="trans_id">
@@ -50,7 +68,7 @@
                                 <input class="form-control" type="text" name="amount">
                             </td>
                             <td>
-                                <input class="form-control" type="text" name="balance">
+                                <input class="form-control" type="number" name="balance">
                             </td>
                         </tr>
                     </div>
@@ -64,6 +82,10 @@
         </div>
     </div>
     </form>
+    <br>
+    <div style="text-align:center">
+        <strong>After Submission please close the prevoius tab and refresh he tab opened after submission</strong>
+    </div>
     <?php require_once DIR . '/db_insert.php' ?>
 
     <script src="script.js"></script>

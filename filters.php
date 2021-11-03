@@ -15,7 +15,5 @@ function remove_special_chars($str)
 
 function remove_htmlTags($str)
 {
-    /*$regex = '@<(script|style|h1)[^>]*?>.*?</\\1>@si';*/
-// return preg_replace($regex,'',$str);
-return strip_tags($str);
+    return strip_tags($str);
 }
