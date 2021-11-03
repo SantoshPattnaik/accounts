@@ -1,3 +1,6 @@
+window.onload = () => {
+    document.getElementsByTagName('input').value = ''
+}
 function validate() {
     let n1 = document.forms["mainForm"]["date"].value
     let n2 = document.forms["mainForm"]["acname"].value
@@ -9,4 +12,9 @@ function validate() {
         alert("Please enter value inside the input boxes to proceed")
         return false;
     }
+    newtab();
+}
+
+function newtab() {
+    window.open('./', '_blank');
 }

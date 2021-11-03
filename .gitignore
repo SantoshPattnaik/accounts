@@ -1,7 +1,12 @@
 .vscode/
+bootstrap-5.1.3
 app.js
 mod.js
 test.php
 main.c
 main.cpp
 .prettierignore
+test.txt
+test.js
+/*.zip
+test.html

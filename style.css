@@ -7,33 +7,47 @@
 
 #site-title {
   font-family: "AlternateGotNo1D";
-  font-size: 60px;
+  /* font-size: 60px; */
   text-align: center;
 }
 
-td,
+/* td,
 th,
 tr {
   border: 1px solid black;
   padding: 5px;
   text-align: center;
   height: 20px;
-}
+} */
 
-table {
+/* table {
   width: 100%;
-}
+} */
 
 #submit-button {
   font-weight: bolder;
 }
 
-#button-container {
+/* #button-container {
   position: relative;
-}
+} */
 
-#center {
+/* #center {
   margin: 0;
   position: absolute;
   left: 50%;
+} */
+
+/* for input area matching with the table padding */
+/* .table {
+  margin-bottom: 2rem;
 }
+
+table td {
+  position: relative;
+}
+table td input {
+  position: absolute;
+  top: 0;
+  left: 0;
+} */

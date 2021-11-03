@@ -8,17 +8,23 @@ require_once './constants.php';
 $mysqli = new mysqli(HOST, UNAME, PASS);
 
 
-$mysqli->query("CREATE DATABASE IF NOT EXISTS accounts");
+if (($mysqli->query("CREATE DATABASE IF NOT EXISTS accounts")) === false) {
+    echo "Could not create database" . $mysqli->error;
+}
 
 $mysqli->query("USE accounts");
 
-$mysqli->query('CREATE TABLE IF NOT EXISTS santosh_pattnaik(
-    Sl_No INT NOT NULL,
+if (($mysqli->query('CREATE TABLE IF NOT EXISTS santosh_pattnaik(
+    Sl_No INT PRIMARY KEY,
     Date DATE NOT NULL,
-    Acname VARCHAR(26) PRIMARY KEY,
-    Trans_ID varchar(30) NOT NULL,
+    Account_Holder_Name VARCHAR(26) NOT NULL,
+    Bank_Name VARCHAR(12) NOT NULL,
+    Payment_Method VARCHAR(12) NOT NULL,
+    Transaction_ID varchar(30) NOT NULL,
     Amount INT NOT NULL,
     Balance INT NOT NULL
-)');
+)')) === false) {
+    echo "Could not create table in database " . $mysqli->error;
+}
 
-$result = $mysqli->query('SELECT * FROM santosh_pattnaik');
+$result = $mysqli->query('SELECT * FROM santosh_pattnaik ORDER BY Sl_No DESC');
