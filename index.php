@@ -11,24 +11,24 @@
     <title>Accounts</title>
 </head>
 
-<body>
+<body class="bg-light">
     <h1 id="site-title" class="display-3">ACCOUNTS MANAGEMENT</h1>
     <div class="table-responsive">
-        <table aria-label="table" id="table" class="table table-striped table-bordered">
-            <thead class="table-dark text-center">
-                <tr>
-                    <th id="date" scope="col">Date of Transaction</th>
-                    <th id="account_name" scope="col">Account Holder Name</th>
-                    <th id="bank_name" scope="col">Bank Name</th>
-                    <th id="payment_method" scope="col">Payment Method</th>
-                    <th id="trans_id" scope="col">Transaction ID</th>
-                    <th id="amount" scope="col">Amount</th>
-                    <th id="balance" scope="col">Balance</th>
-                </tr>
-            </thead>
-            <tbody class="text-center">
-                <?php require_once DIR . '/data_fetch.php' ?>
-                <form class="form-group" name="mainForm" method="POST" onsubmit="return validate()">
+        <form class="form-group" name="mainForm" method="POST" onsubmit="return validate()">
+            <table aria-label="table" id="table" class="table table-striped table-bordered">
+                <thead class="table-dark text-center">
+                    <tr>
+                        <th id="date" scope="col">Date of Transaction</th>
+                        <th id="account_name" scope="col">Account Holder Name</th>
+                        <th id="bank_name" scope="col">Bank Name</th>
+                        <th id="payment_method" scope="col">Payment Method</th>
+                        <th id="trans_id" scope="col">Transaction ID</th>
+                        <th id="amount" scope="col">Amount</th>
+                        <th id="balance" scope="col">Balance</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <?php require_once DIR . '/data_fetch.php' ?>
                     <div class="table-responsive">
                         <tr>
                             <td>
@@ -39,10 +39,10 @@
                             </td>
                             <td>
                                 <select class="form-control" type="text" name="bank">
-                                    <option>State Bank Of India</option>
-                                    <option>Union Bank Of India</option>
+                                    <option><?php echo "SBI" ?></option>
+                                    <option><?php echo "Union Bank" ?></option>
                                     <option>Canara Bank</option>
-                                    <option>Federal Bank Of India</option>
+                                    <option>Federal Bank</option>
                                     <option>Punjab National Bank</option>
                                     <option>Yes Bank</option>
                                     <option>Axis Bank</option>
@@ -72,19 +72,24 @@
                             </td>
                         </tr>
                     </div>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+            <div id="button-container">
+                <div id="center" class="text-center">
+                    <button id="submit-button" class="btn btn-outline-success" formaction="./"
+                        type="submit">Submit</button>
+                </div>
+            </div>
+            <div id="dark-theme">
+                <div class="text-center">
+                    <button id="dark-button" class="btn btn-outline-dark" type="submit">Dark</button>
+                </div>
+            </div>
+        </form>
     </div>
-    </table>
-    <div id="button-container">
-        <div id="center" class="text-center">
-            <button id="submit-button" class="btn btn-outline-success" formaction="./" type="submit">Submit</button>
-        </div>
-    </div>
-    </form>
     <br>
-    <div style="text-align:center">
-        <strong>After Submission please close the prevoius tab and refresh he tab opened after submission</strong>
+    <div class="text-center">
+        <strong>After Submission please close the previous tab and refresh the tab opened after submission</strong>
     </div>
     <?php require_once DIR . '/db_insert.php' ?>
 
