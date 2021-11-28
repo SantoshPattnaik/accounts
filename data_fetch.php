@@ -1,7 +1,9 @@
 <?php
 
-require_once DIR . '/db_fetch.php';
-
+require_once './db_fetch.php';
+/**
+ * Fetches data from the databse and assigns them to their respective variables through a while loop echos and prints in the table
+ */
 
 while ($row = $result->fetch_assoc()) {
     /**

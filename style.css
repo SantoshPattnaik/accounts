@@ -51,3 +51,6 @@ table td input {
   top: 0;
   left: 0;
 } */
+.bg-dark {
+  color: white;
+}

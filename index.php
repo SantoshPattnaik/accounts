@@ -1,4 +1,5 @@
-<?php require_once './constants.php' ?>
+<?php require_once './constants.php';
+require_once './functions.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +12,7 @@
     <title>Accounts</title>
 </head>
 
-<body class="bg-light">
+<body>
     <h1 id="site-title" class="display-3">ACCOUNTS MANAGEMENT</h1>
     <div class="table-responsive">
         <form class="form-group" name="mainForm" method="POST" onsubmit="return validate()">
@@ -28,19 +29,19 @@
                     </tr>
                 </thead>
                 <tbody class="text-center">
-                    <?php require_once DIR . '/data_fetch.php' ?>
+                    <?php require_once './data_fetch.php' ?>
                     <div class="table-responsive">
                         <tr>
                             <td>
-                                <input class="form-control" type="date" name="date">
+                                <input class="form-control-plaintext form-control-sm" type="date" name="date">
                             </td>
                             <td>
-                                <input class="form-control" type="text" name="acname">
+                                <input class="form-control-plaintext form-control-sm" type="text" name="acname">
                             </td>
                             <td>
-                                <select class="form-control" type="text" name="bank">
-                                    <option><?php echo "SBI" ?></option>
-                                    <option><?php echo "Union Bank" ?></option>
+                                <select class="form-control-plaintext form-control-sm" type="text" name="bank">
+                                    <option>State Bank Of India</option>
+                                    <option>Union Bank</option>
                                     <option>Canara Bank</option>
                                     <option>Federal Bank</option>
                                     <option>Punjab National Bank</option>
@@ -51,7 +52,7 @@
                                 </select>
                             </td>
                             <td>
-                                <select class="form-control" type="text" name="pay_method">
+                                <select class="form-control-plaintext form-control-sm" type="text" name="pay_method">
                                     <option>UPI</option>
                                     <option>Transfer</option>
                                     <option>Cheque</option>
@@ -62,13 +63,10 @@
                                 </select>
                             </td>
                             <td>
-                                <input class="form-control" type="text" name="trans_id">
+                                <input class="form-control-plaintext form-control-sm" type="text" name="trans_id">
                             </td>
                             <td>
-                                <input class="form-control" type="text" name="amount">
-                            </td>
-                            <td>
-                                <input class="form-control" type="number" name="balance">
+                                <input class="form-control-plaintext form-control-sm" type="text" name="amount">
                             </td>
                         </tr>
                     </div>
@@ -80,18 +78,13 @@
                         type="submit">Submit</button>
                 </div>
             </div>
-            <div id="dark-theme">
-                <div class="text-center">
-                    <button id="dark-button" class="btn btn-outline-dark" type="submit">Dark</button>
-                </div>
-            </div>
         </form>
     </div>
     <br>
     <div class="text-center">
         <strong>After Submission please close the previous tab and refresh the tab opened after submission</strong>
     </div>
-    <?php require_once DIR . '/db_insert.php' ?>
+    <?php require_once './db_insert.php' ?>
 
     <script src="script.js"></script>
     <!-- <script src="./bootstrap-5.1.3/js/jquery-3.6.0.js"></script> -->
