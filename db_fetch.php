@@ -1,6 +1,8 @@
 <?php
 
 /**
+ * Connects and creates table and database using SQL Query
+ * 
  * @package Accounts
  */
 require_once './constants.php';
@@ -18,7 +20,7 @@ if (($mysqli->query('CREATE TABLE IF NOT EXISTS santosh_pattnaik(
     Sl_No INT PRIMARY KEY,
     Date DATE NOT NULL,
     Account_Holder_Name VARCHAR(26) NOT NULL,
-    Bank_Name VARCHAR(12) NOT NULL,
+    Bank_Name VARCHAR(26) NOT NULL,
     Payment_Method VARCHAR(12) NOT NULL,
     Transaction_ID varchar(30) NOT NULL,
     Amount INT NOT NULL,
