@@ -20,10 +20,8 @@ $amount_input = string_filter($_POST['amount'], 1, 1);
 
 if (!empty($date_input)) {
     $insertion_query = "INSERT INTO santosh_pattnaik VALUES ('$sl_no','$date_input','$acname_input','$bank','$payment_method','$trans_id_input','$amount_input')";
-    if ($mysqli->query($insertion_query) === TRUE) {
-        $error_string = "<script>alert('Database Updated')</script>";
-    } else {
-        $error_string = "Data cannot be updated " . $mysqli->error;
+    if ($mysqli->query($insertion_query) === FALSE) {
+        die("Data cannot be updated " . $mysqli->error);
     }
 }
 
