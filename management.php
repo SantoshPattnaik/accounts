@@ -34,6 +34,10 @@ require_once './functions.php' ?>
                 </div>
             </tbody>
         </table>
+        <div class="input-group mb-3 input-group-lg">
+            <span class="input-group-text">Balance</span>
+            <input type="text" class="form-control" placeholder="Rs <?php echo $balance ?>" disabled>
+        </div>
     </div>
     <br>
     <script src="script.js"></script>

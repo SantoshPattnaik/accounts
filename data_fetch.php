@@ -5,6 +5,7 @@ ob_start();
  * Fetches data from the database and assigns them to their respective variables through a while loop echos and prints in the table
  */
 
+$balance = 0;
 while ($row = $result->fetch_assoc()) {
     /**
      * Variable to fetch date
@@ -54,6 +55,7 @@ while ($row = $result->fetch_assoc()) {
      * @var string $amount
      */
     $amount = $row['Amount'];
+    $balance += $amount;
 
     echo
     "<tr>
