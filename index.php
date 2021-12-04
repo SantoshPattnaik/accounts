@@ -17,13 +17,13 @@
             <div class="mb-3 mt-3">
                 <label for="uname" class="form-label">Date Of Transaction</label>
                 <input type="date" name="date" class="form-control" required>
-                <div class="valid-feedback">Valid.</div>
+                <div class="valid-feedback">Ok.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
             </div>
             <div class="mb-3 mt-3">
                 <label for="uname" class="form-label">Name</label>
                 <input type="text" name="acname" class="form-control" placeholder="Enter Your Name Here" required>
-                <div class="valid-feedback">Valid.</div>
+                <div class="valid-feedback">Ok.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
             </div>
             <div class="mb-3 mt-3">
@@ -39,7 +39,7 @@
                     <option>HDFC Bank</option>
                     <option>ICICI Bank</option>
                 </select>
-                <div class="valid-feedback">Valid.</div>
+                <div class="valid-feedback">Ok.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
             </div>
             <div class="mb-3 mt-3">
@@ -53,21 +53,21 @@
                     <option>Netbanking</option>
                     <option>RTGS</option>
                 </select>
-                <div class="valid-feedback">Valid.</div>
+                <div class="valid-feedback">Ok.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
             </div>
             <div class="mb-3 mt-3">
                 <label for="uname" class="form-label">Transaction ID</label>
                 <input type="text" name="trans_id" class="form-control" placeholder="Enter The Transaction ID Here"
                     required>
-                <div class="valid-feedback">Valid.</div>
+                <div class="valid-feedback">Ok.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
             </div>
             <div class="mb-3 mt-3">
                 <label for="uname" class="form-label">Amount in INR</label>
                 <input type="text" name="amount" class="form-control" placeholder="Enter The Transaction Amount Here"
                     required>
-                <div class="valid-feedback">Valid.</div>
+                <div class="valid-feedback">Ok.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
             </div>
             <div class="form-check mb-3">
