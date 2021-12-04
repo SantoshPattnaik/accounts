@@ -30,4 +30,3 @@ if (!empty($date_input)) {
 $mysqli->close();
 header("Location: management.php");
 exit;
-ob_end_flush();

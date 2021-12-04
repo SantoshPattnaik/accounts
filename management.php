@@ -30,9 +30,7 @@ require_once './functions.php' ?>
             <tbody class="text-center">
                 <div class="table-responsive">
                     <?php
-                    ob_start();
-                    require_once './data_fetch.php';
-                    ob_end_flush(); ?>
+                    require_once './data_fetch.php'; ?>
                 </div>
             </tbody>
         </table>
