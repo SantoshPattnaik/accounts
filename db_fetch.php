@@ -23,8 +23,7 @@ if (($mysqli->query('CREATE TABLE IF NOT EXISTS santosh_pattnaik(
     Bank_Name VARCHAR(26) NOT NULL,
     Payment_Method VARCHAR(12) NOT NULL,
     Transaction_ID varchar(30) NOT NULL,
-    Amount INT NOT NULL,
-    Balance INT NOT NULL
+    Amount INT NOT NULL
 )')) === false) {
     echo "Could not create table in database " . $mysqli->error;
 }
