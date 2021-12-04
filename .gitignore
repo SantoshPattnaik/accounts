@@ -10,3 +10,5 @@ test.txt
 test.js
 /*.zip
 test.html
+lib/
+target/
