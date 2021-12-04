@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./bootstrap-5.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?random=<?php echo rand(); ?>">
     <title>Accounts</title>
 </head>
 
@@ -80,7 +80,7 @@
         </form>
         <br>
     </div>
-    <script src="./script.js"></script>
+    <script src="./script.js?random=<?php echo rand(); ?>"></script>
     <script src="./bootstrap-5.1.3/js/bootstrap.min.js"></script>
 </body>
 
