@@ -28,6 +28,6 @@ if (!empty($date_input)) {
 }
 
 $mysqli->close();
-header('Location:http://localhost/accounts/management.php');
+header("Location: management.php");
 exit;
 ob_end_flush();

@@ -15,7 +15,6 @@ require_once './functions.php' ?>
 </head>
 
 <body>
-    <h1 id="site-title" class="display-3">ACCOUNTS MANAGEMENT</h1>
     <div class="table-responsive">
         <table aria-label="table" id="table" class="table table-striped table-bordered">
             <thead class="table-dark text-center">
@@ -39,10 +38,6 @@ require_once './functions.php' ?>
         </table>
     </div>
     <br>
-    <div class="text-center">
-        <strong>After Submission please close the previous tab and refresh the tab opened after submission</strong>
-    </div>
-
     <script src="script.js"></script>
     <!-- <script src="./bootstrap-5.1.3/js/jquery-3.6.0.js"></script> -->
     <script src="./bootstrap-5.1.3/js/bootstrap.min.js"></script>

@@ -12,6 +12,7 @@
 
 <body>
     <div class="container">
+        <h1 id="site-title" class="display-3">ACCOUNTS MANAGEMENT</h1>
         <form action="./db_insert.php" method="post" class="was-validated form-group" onsubmit="return validate()">
             <div class="mb-3 mt-3">
                 <label for="uname" class="form-label">Date Of Transaction</label>
@@ -77,6 +78,7 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
+        <br>
     </div>
     <script src="./script.js"></script>
     <script src="./bootstrap-5.1.3/js/bootstrap.min.js"></script>
