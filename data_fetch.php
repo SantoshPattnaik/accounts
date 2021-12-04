@@ -1,8 +1,8 @@
 <?php
-
 require_once './db_fetch.php';
+ob_start();
 /**
- * Fetches data from the databse and assigns them to their respective variables through a while loop echos and prints in the table
+ * Fetches data from the database and assigns them to their respective variables through a while loop echos and prints in the table
  */
 
 while ($row = $result->fetch_assoc()) {
@@ -55,13 +55,6 @@ while ($row = $result->fetch_assoc()) {
      */
     $amount = $row['Amount'];
 
-    /**
-     * Variable to fetch the balance amount in the account
-     * 
-     * @var string $balance
-     */
-    $balance = $row['Balance'];
-
     echo
     "<tr>
         <td>
@@ -82,8 +75,5 @@ while ($row = $result->fetch_assoc()) {
         <td>
             Rs. $amount
         </td>
-        <td>
-            Rs. $balance
-        </td>   
     </tr>";
 }

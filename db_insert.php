@@ -1,6 +1,8 @@
 <?php
 require_once './filters.php';
-error_reporting(E_ERROR);
+require_once './functions.php';
+require_once './data_fetch.php';
+// error_reporting(E_ERROR);
 /**
  * Fetches data from the input tables and insert them into the database with various filterings and manipulations
  */
@@ -15,15 +17,17 @@ $bank = string_filter($_POST['bank'], 1);
 $payment_method = string_filter($_POST['pay_method'], 1);
 $trans_id_input = string_filter($_POST['trans_id'], 1);
 $amount_input = string_filter($_POST['amount'], 1, 1);
-$balance_input = string_filter($_POST['balance'], 1, 1);
 
 if (!empty($date_input)) {
-    $insertion_query = "INSERT INTO santosh_pattnaik VALUES ('$sl_no','$date_input','$acname_input','$bank','$payment_method','$trans_id_input','$amount_input','$balance_input')";
+    $insertion_query = "INSERT INTO santosh_pattnaik VALUES ('$sl_no','$date_input','$acname_input','$bank','$payment_method','$trans_id_input','$amount_input')";
     if ($mysqli->query($insertion_query) === TRUE) {
-        echo "<script>alert('Database Updated')</script>";
+        $error_string = "<script>alert('Database Updated')</script>";
     } else {
-        echo "Data cannot be updated " . $mysqli->error;
+        $error_string = "Data cannot be updated " . $mysqli->error;
     }
 }
 
 $mysqli->close();
+header('Location:http://localhost/accounts/management.php');
+exit;
+ob_end_flush();
