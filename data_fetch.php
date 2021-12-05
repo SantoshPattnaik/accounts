@@ -79,3 +79,4 @@ while ($row = $result->fetch_assoc()) {
         </td>
     </tr>";
 }
+ob_end_flush();
