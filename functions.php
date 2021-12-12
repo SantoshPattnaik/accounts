@@ -59,3 +59,8 @@ function strJoinerLoop($str): string
     }
     return $new_str;
 }
+
+function stringHash($string, $algo)
+{
+    return hash($algo, $string);
+}
