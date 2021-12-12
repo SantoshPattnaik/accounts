@@ -10,8 +10,6 @@ require_once './functions.php';
 
 $mysqli = new mysqli(HOST, UNAME, PASS);
 
-
-
 if (($mysqli->query("CREATE DATABASE IF NOT EXISTS accounts")) === false) {
     echo "Could not create database" . $mysqli->error;
 }
@@ -32,6 +30,5 @@ if (isset($_COOKIE['user_name'])) {
 )")) === false) {
         echo "Could not create table in database " . $mysqli->error;
     }
-
     $result = $mysqli->query("SELECT * FROM $db_name ORDER BY Sl_No DESC");
 }
