@@ -1,4 +1,5 @@
-<?php require_once './db_fetch.php' ?>
+<?php require_once './db_fetch.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,11 +14,11 @@
     <?php
     if (!isset($_COOKIE['user_name'])) {
     ?>
-    <form action="/accounts/cookieCheck.php" method="post">
-        <p>Your name is going to be used as the database name</p>
-        <input type="text" placeholder="Enter your name here" name="name" value="">
-        <input type="submit">
-    </form>
+        <form action="/accounts/cookieCheck.php" method="post">
+            <p>Your name is going to be used as the database name</p>
+            <input type="text" placeholder="Enter your name here" name="name" value="">
+            <input type="submit">
+        </form>
     <?php } ?>
 </body>
 
