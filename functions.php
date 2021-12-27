@@ -67,3 +67,10 @@ function stringHash($string, $algo)
     $newstring = trim($string);
     return hash($algo, $newstring);
 }
+
+function ac_log($log_string)
+{
+    $logfile = fopen("site.log", "a+");
+    fwrite($logfile, $log_string . "\n");
+    fclose($logfile);
+}
