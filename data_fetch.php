@@ -1,6 +1,7 @@
 <?php
 require_once './db_fetch.php';
 ob_start();
+ac_log("Output buffering 3 begins");
 /**
  * Fetches data from the database and assigns them to their respective variables through a while loop echos and prints in the table
  */
@@ -79,4 +80,7 @@ while ($row = $result->fetch_assoc()) {
         </td>
     </tr>";
 }
+ac_log("Table rows and values are assigned their respective values");
 ob_end_flush();
+ac_log("Output Buffering 3 ends");
+ac_log("Output Buffering 2 ends");

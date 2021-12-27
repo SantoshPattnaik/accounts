@@ -13,6 +13,7 @@
 <body>
     <?php
     if (!isset($_COOKIE['user_name'])) {
+        ac_log("Cookie Does not exist so, create cookie value by providing input field to user");
     ?>
         <form action="/accounts/cookieCheck.php" method="post">
             <p>Your name is going to be used as the database name</p>

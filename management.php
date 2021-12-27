@@ -1,7 +1,8 @@
 <?php
 ob_start();
 require_once './constants.php';
-require_once './functions.php' ?>
+require_once './functions.php';
+ac_log("Output Buffer 2 begins"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,6 +44,7 @@ require_once './functions.php' ?>
     <script src="script.js"></script>
     <!-- <script src="./bootstrap-5.1.3/js/jquery-3.6.0.js"></script> -->
     <script src="./bootstrap-5.1.3/js/bootstrap.min.js"></script>
+    <?php ac_log("------\"management.php\" renders completely------"); ?>
 </body>
 
 </html>

@@ -9,17 +9,18 @@ require_once './constants.php';
 require_once './functions.php';
 
 $mysqli = new mysqli(HOST, UNAME, PASS);
+ac_log("\"mysqli\" object created");
 
 if (($mysqli->query("CREATE DATABASE IF NOT EXISTS accounts")) === false) {
-    echo "Could not create database" . $mysqli->error;
+    ac_log($mysqli->error);
 }
 
 $mysqli->query("USE accounts");
 
 if (isset($_COOKIE['user_name'])) {
-    $db_name = stringHash(trim($_COOKIE['user_name']), 'md5');
-
-    if (($mysqli->query("CREATE TABLE IF NOT EXISTS $db_name(
+    $table_name = stringHash(trim($_COOKIE['user_name']), 'md5');
+    ac_log("cookie name hashing success");
+    if (($mysqli->query("CREATE TABLE IF NOT EXISTS $table_name(
     Sl_No INT PRIMARY KEY,
     Date DATE NOT NULL,
     Account_Holder_Name VARCHAR(26) NOT NULL,
@@ -28,7 +29,8 @@ if (isset($_COOKIE['user_name'])) {
     Transaction_ID VARCHAR(30) NOT NULL,
     Amount INT NOT NULL
 )")) === false) {
-        echo "Could not create table in database " . $mysqli->error;
+        ac_log($mysqli->error);
     }
-    $result = $mysqli->query("SELECT * FROM $db_name ORDER BY Sl_No DESC");
+    $result = $mysqli->query("SELECT * FROM $table_name ORDER BY Sl_No DESC");
+    ac_log("Table fetched from database");
 }

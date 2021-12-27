@@ -4,7 +4,7 @@ require_once './functions.php';
 require_once './data_fetch.php';
 // error_reporting(E_ERROR);
 /**
- * Fetches data from the input tables and insert them into the database with various filterings and manipulations
+ * Fetches data from the input tables and insert them into the database with various filters and manipulations
  */
 
 $db_sl_no = $result->num_rows;
@@ -21,10 +21,13 @@ $amount_input = string_filter($_POST['amount'], 1, 1);
 if (!empty($date_input)) {
     $insertion_query = "INSERT INTO $table_name VALUES ('$sl_no','$date_input','$acname_input','$bank','$payment_method','$trans_id_input','$amount_input')";
     if ($mysqli->query($insertion_query) === FALSE) {
-        die("Data cannot be updated " . $mysqli->error);
+        ac_log($mysqli->error);
+        exit;
     }
 }
 
 $mysqli->close();
+ac_log("mysqli object closed and resources are freed");
 header("Location: management.php");
+ac_log("Redirected to \"management.php\"");
 exit;
