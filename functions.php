@@ -8,10 +8,10 @@
 /**
  * Help in manipulation of string that are the arguments provided
  *
- * @param string  $str                 The string to be manipulated
- * @param integer $firstCharToUpper    Make the first character of each name string uppercase
- * @param integer $allCharToLower      Make all characters of string lowercase 
- * @param integer $allCharToUpper      Make all characters of string uppercase
+ * @param  string  $str                 The string to be manipulated
+ * @param  integer $firstCharToUpper    Make the first character of each name string uppercase
+ * @param  integer $allCharToLower      Make all characters of string lowercase 
+ * @param  integer $allCharToUpper      Make all characters of string uppercase
  * @return string
  */
 function stringManipulation($str, $firstCharToUpper = 0, $allCharToLower = 0, $allCharToUpper = 0): string
@@ -19,9 +19,11 @@ function stringManipulation($str, $firstCharToUpper = 0, $allCharToLower = 0, $a
     if ($allCharToLower) {
         return strtolower($str);
     }
+
     if ($allCharToUpper) {
         return strtoupper($str);
     }
+
     if ($firstCharToUpper) {
         return firstLettertoUpper($str);
     }
@@ -58,4 +60,10 @@ function strJoinerLoop($str): string
         }
     }
     return $new_str;
+}
+
+function stringHash($string, $algo)
+{
+    $newstring = trim($string);
+    return hash($algo, $newstring);
 }

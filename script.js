@@ -6,15 +6,8 @@ function validate() {
     let n2 = document.forms["mainForm"]["acname"].value
     let n3 = document.forms["mainForm"]["trans_id"].value
     let n4 = document.forms["mainForm"]["amount"].value
-    // let n5 = document.forms["mainForm"]["balance"].value
-
     if (n1 == '' || n2 == '' || n3 == '' || n4 == '') {
         alert("Please enter value inside the input boxes to proceed")
         return false;
     }
-    newtab();
-}
-
-function newtab() {
-    window.open('./', '_blank');
 }
