@@ -5,80 +5,81 @@ ac_log("Output buffering 3 begins");
 /**
  * Fetches data from the database and assigns them to their respective variables through a while loop echos and prints in the table
  */
-
 $balance = 0;
-while ($row = $result->fetch_assoc()) {
-    /**
-     * Variable to fetch date
-     * 
-     * @var string $date
-     */
-    $date = $row['Date'];
-    $dt = $date[8] . $date[9];
-    $month = $date[5] . $date[6];
-    $year = $date[0] . $date[1] . $date[2] . $date[3];
+if (isset($result)) {
+    while ($row = $result->fetch_assoc()) {
+        /**
+         * Variable to fetch date
+         * 
+         * @var string $date
+         */
+        $date = $row['Date'];
+        $dt = $date[8] . $date[9];
+        $month = $date[5] . $date[6];
+        $year = $date[0] . $date[1] . $date[2] . $date[3];
 
-    $monthName = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+        $monthName = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
-    $dateFiltered = $dt . ' - ' . $monthName[$month - 1] . ' - ' . $year;
+        $dateFiltered = $dt . ' - ' . $monthName[$month - 1] . ' - ' . $year;
 
-    /**
-     * Variable to fetch account holder name
-     * 
-     * @var string $acname
-     */
-    $acname = $row['Account_Holder_Name'];
+        /**
+         * Variable to fetch account holder name
+         * 
+         * @var string $acname
+         */
+        $acname = $row['Account_Holder_Name'];
 
-    /**
-     * Variable to fetch bank name
-     * 
-     * @var string $bankFetch
-     */
-    $bankFetch = $row['Bank_Name'];
+        /**
+         * Variable to fetch bank name
+         * 
+         * @var string $bankFetch
+         */
+        $bankFetch = $row['Bank_Name'];
 
-    /**
-     * Variable to fetch payment method
-     * 
-     * @var string $payMethodFetch
-     */
-    $payMethodFetch = $row['Payment_Method'];
+        /**
+         * Variable to fetch payment method
+         * 
+         * @var string $payMethodFetch
+         */
+        $payMethodFetch = $row['Payment_Method'];
 
-    /**
-     * Variable to fetch transaction ID
-     * 
-     * @var string $trans_id
-     */
-    $trans_id = $row['Transaction_ID'];
+        /**
+         * Variable to fetch transaction ID
+         * 
+         * @var string $trans_id
+         */
+        $trans_id = $row['Transaction_ID'];
 
-    /**
-     * Variable to fetch amount of transaction
-     * 
-     * @var string $amount
-     */
-    $amount = $row['Amount'];
-    $balance += $amount;
+        /**
+         * Variable to fetch amount of transaction
+         * 
+         * @var string $amount
+         */
+        $amount = $row['Amount'];
+        $balance += $amount;
 
-    echo
-    "<tr>
+        echo
+        "<tr>
         <td>
-            $dateFiltered
+        $dateFiltered
         </td>            
         <td>
-            $acname
+        $acname
         </td>
         <td>
-            $bankFetch
+        $bankFetch
         </td>
         <td>
-            $payMethodFetch
+        $payMethodFetch
         </td>
         <td>
-            $trans_id
+        $trans_id
         </td>
         <td>
-            Rs. $amount
+        Rs. $amount
         </td>
-    </tr>";
+        </tr>";
+    }
 }
 ac_log("Table rows and values are assigned their respective values");
 ob_end_flush();
