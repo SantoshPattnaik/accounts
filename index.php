@@ -84,6 +84,7 @@ spl_autoload_register('Autoloader');
         array_push($td, $dom->createElement('td', $db->get_transID($index)));
         array_push($td, $dom->createElement('td', $db->get_transAmount($index)));
         $index++;
+        //test
     }
     $last_row = end($tr);
     $index = 0;
