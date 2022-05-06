@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Contains filter functions that are useful for various string filterings, etc.
+ * Contains filter functions that are useful for various string filters, etc.
  */
 
 /**
@@ -49,7 +49,7 @@ function remove_htmlTags($str)
 /**
  * Removes non-digits
  *
- * @param  string $str Input String with numebers and other characters
+ * @param  string $str Input String with numbers and other characters
  * @return string      String with not other characters than digits
  */
 function only_numbers($str): string
