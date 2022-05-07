@@ -48,6 +48,13 @@ spl_autoload_register('Autoloader');
     $table = $dom->createElement('table');
     $thead = $dom->createElement('thead');
     $tbody = $dom->createElement('tbody');
+    $div = $dom->createElement('div');
+    $div->setAttribute('class', 'container-fluid p-2 bg-dark text-white text-center');
+    $h1 = $dom->createElement('h1', 'Accounts Management');
+    $h1->setAttribute('class', 'display-4');
+    $div->appendChild($h1);
+    echo $dom->saveHTML($div);
+
     $table->setAttribute('class', 'table');
     $thead->setAttribute('class', 'table-dark text-center');
     $tbody->setAttribute('class', 'text-center');
