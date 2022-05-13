@@ -1,7 +1,7 @@
 <?php
 function Autoloader($className)
 {
-    require strtolower($className) . '.class.php';
+    require "./classes/" . strtolower($className) . '.class.php';
 }
 spl_autoload_register('Autoloader');
 ?>
@@ -42,89 +42,13 @@ spl_autoload_register('Autoloader');
 
 <body>
     <?php
+    $dom = new DomHandler();
     $db = new DBManager('localhost', 'root', '');
     $db->arrange_table_values();
-    $dom = new DOMDocument();
-    $table = $dom->createElement('table');
-    $thead = $dom->createElement('thead');
-    $tbody = $dom->createElement('tbody');
-    $div = $dom->createElement('div');
-    $div->setAttribute('class', 'container-fluid p-2 bg-dark text-white text-center');
-    $h1 = $dom->createElement('h1', 'Accounts Management');
-    $h1->setAttribute('class', 'display-4');
-    $div->appendChild($h1);
-    echo $dom->saveHTML($div);
-
-    $table->setAttribute('class', 'table');
-    $thead->setAttribute('class', 'table-dark text-center');
-    $tbody->setAttribute('class', 'text-center');
-    $tr = array();
-    $index = 0;
-    do {
-        array_push($tr, $dom->createElement('tr'));
-        $index++;
-    } while ($index < $db->get_row_count());
-    array_push($tr, $dom->createElement('tr'));
-    array_push($tr, $dom->createElement('tr'));
-
-    $th = array();
-    array_push($th, $dom->createElement('th', '#'));
-    array_push($th, $dom->createElement('th', 'Date Of Transaction'));
-    array_push($th, $dom->createElement('th', 'Account Holder Name'));
-    array_push($th, $dom->createElement('th', 'Bank Name'));
-    array_push($th, $dom->createElement('th', 'Payment Method'));
-    array_push($th, $dom->createElement('th', 'Transaction ID'));
-    array_push($th, $dom->createElement('th', 'Amount'));
-    for ($i = 0; $i < count($th); $i++) {
-        $tr[0]->appendChild($th[$i]);
-    }
-    $thead->appendChild($tr[0]);
-    $table->appendChild($thead);
-    $td = array();
-    $index = 0;
-    while ($index < $db->get_row_count()) {
-        array_push($td, $dom->createElement('td', $db->get_sl_no($index)));
-        array_push($td, $dom->createElement('td', $db->get_transDate($index)));
-        array_push($td, $dom->createElement('td', $db->get_personName($index)));
-        array_push($td, $dom->createElement('td', $db->get_bankName($index)));
-        array_push($td, $dom->createElement('td', $db->get_payMethod($index)));
-        array_push($td, $dom->createElement('td', $db->get_transID($index)));
-        array_push($td, $dom->createElement('td', $db->get_transAmount($index)));
-        $index++;
-        //test
-    }
-    $last_row = end($tr);
-    $index = 0;
-    $j = 0;
-    for ($i = 1; $i <= $db->get_row_count(); $i++) {
-        for (; $j < (count($th) * $i); $j++) {
-            $tr[$i]->appendChild($td[$j]);
-        }
-    }
-    // while ($index < count($td)) {
-    //     $tr[1]->appendChild($td[$index]);
-    //     $index++;
-    // }
-    $last_column = array();
-    array_push($last_column, $dom->createElement('td'));
-    array_push($last_column, $dom->createElement('td'));
-    array_push($last_column, $dom->createElement('td'));
-    array_push($last_column, $dom->createElement('td'));
-    array_push($last_column, $dom->createElement('td'));
-    array_push($last_column, $dom->createElement('td', 'Balance'));
-    array_push($last_column, $dom->createElement('td', $db->get_balance()));
-
-    $index = 0;
-    while ($index < count($last_column)) {
-        $last_row->appendChild($last_column[$index]);
-        $index++;
-    }
-    for ($i = count($tr) - 2; $i > 0; $i--) {
-        $tbody->appendChild($tr[$i]);
-    }
-    $tbody->appendChild($last_row);
-    $table->appendChild($tbody);
-    echo $dom->saveHTML($table);
+    $dom->create_div_tag(null, 'class', 'container-fluid p-2 bg-dark text-white text-center', $dom->create_b_tag('Accounts Management', 'class', 'display-4'), 1);
+    $table_headings = array('#', 'Date', 'Name', 'Bank', 'Payment Method', 'Transaction_ID', 'Amount');
+    $table_columns = array($db->get_sl_no(), $db->get_transDate(), $db->get_personName(), $db->get_bankName(), $db->get_payMethod(), $db->get_transID(), $db->get_transAmount());
+    $dom->create_table1('class', 'table', 'class', 'table-dark text-center', $table_headings, 'class', 'text-center', $db->get_row_count(), $table_columns, 1);
 
     ?>
 </body>
