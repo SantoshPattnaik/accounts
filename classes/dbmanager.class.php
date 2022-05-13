@@ -26,7 +26,7 @@ class DBManager
 
     private function table_create()
     {
-        if (($this->mysqli->query("CREATE TABLE IF NOT EXISTS 8fc30a8095b3451b7c455d9a0d0aa73a(
+        if (($this->mysqli->query("CREATE TABLE IF NOT EXISTS santosh_pattnaik(
             Sl_No INT PRIMARY KEY,
             Date DATE NOT NULL,
             Account_Holder_Name VARCHAR(26) NOT NULL,
@@ -40,7 +40,7 @@ class DBManager
 
     private function get_table_values()
     {
-        return $this->mysqli->query("SELECT * FROM 8fc30a8095b3451b7c455d9a0d0aa73a ORDER BY Sl_No DESC");
+        return $this->mysqli->query("SELECT * FROM santosh_pattnaik ORDER BY Sl_No DESC");
     }
     public function set_sl_no($data)
     {
@@ -93,33 +93,33 @@ class DBManager
         }
     }
 
-    public function get_sl_no($index)
+    public function get_sl_no()
     {
-        return $this->sl_no[$index];
+        return $this->sl_no;
     }
-    public function get_personName($index)
+    public function get_personName()
     {
-        return $this->nameOfPerson[$index];
+        return $this->nameOfPerson;
     }
-    public function get_bankName($index)
+    public function get_bankName()
     {
-        return $this->bankName[$index];
+        return $this->bankName;
     }
-    public function get_payMethod($index)
+    public function get_payMethod()
     {
-        return $this->payMethod[$index];
+        return $this->payMethod;
     }
-    public function get_transDate($index)
+    public function get_transDate()
     {
-        return $this->transDate[$index];
+        return $this->transDate;
     }
-    public function get_transAmount($index)
+    public function get_transAmount()
     {
-        return $this->transAmount[$index];
+        return $this->transAmount;
     }
-    public function get_transID($index)
+    public function get_transID()
     {
-        return $this->transID[$index];
+        return $this->transID;
     }
     public function get_balance()
     {
